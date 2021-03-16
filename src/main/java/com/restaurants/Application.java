@@ -1,4 +1,6 @@
-package com.restaurants.main;
+package com.restaurants;
+
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.restaurants.*"})
 public class Application {
 
     @RequestMapping("/")
     String home() {
-        return "Hello Perras!";
+        return "Restaurants API | lfdel24@gmail.com";
     }
-    
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
