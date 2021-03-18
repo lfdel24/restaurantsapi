@@ -12,13 +12,14 @@ import javax.persistence.Id;
  * @author leo
  */
 @Entity
-public class User implements Serializable{
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
+
     private String name;
+    @Column(unique = true)
     private String email;
     private String pass;
 
@@ -54,5 +55,4 @@ public class User implements Serializable{
         this.pass = pass;
     }
 
-    
 }
