@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableJpaRepositories
+//@EnableJpaRepositories
 @SpringBootApplication(scanBasePackages = {"com.restaurants.*"})
 public class Application {
 
