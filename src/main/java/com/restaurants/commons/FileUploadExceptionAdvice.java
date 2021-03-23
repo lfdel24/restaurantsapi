@@ -14,12 +14,12 @@ public class FileUploadExceptionAdvice {
 	
 	@ExceptionHandler(MaxUploadSizeExceededException.class)
 	public ResponseEntity<Response> handleMaxSizeException(MaxUploadSizeExceededException ex) {
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Response("Verifica el tamaño de los archivos"));
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Response(ex.toString()));
 	}
 	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<Response> handleException(Exception ex) {
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Response("Verifica el tamaño de los archivos"));
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Response(ex.toString()));
 	} 
 
 }

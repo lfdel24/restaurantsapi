@@ -24,11 +24,11 @@ public class FileController {
     private IFileService fileService;
 
     @PostMapping("/upload")
-    public ResponseEntity<Response> uploadFiles(@RequestParam("files") MultipartFile file
+    public ResponseEntity<Response> uploadFiles(@RequestParam("file") MultipartFile file
     ) throws Exception {
         fileService.save(file);
         return ResponseEntity.status(HttpStatus.OK)
-                .body(new Response("Los archivos fueron cargados correctamente al servidor"));
+                .body(new Response("Archivo cargado " + file.getOriginalFilename()));
     }
 
     @GetMapping("/{filename:.+}")

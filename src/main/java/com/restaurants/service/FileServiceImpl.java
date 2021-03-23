@@ -1,5 +1,6 @@
 package com.restaurants.service;
 
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,7 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FileServiceImpl implements IFileService {
 
-    private final Path rootFolder = Paths.get("uploads");
+    private final Path rootFolder = Paths.get("/home/leo/uploads");
+
 
     @Override
     public void save(MultipartFile file) throws Exception {
