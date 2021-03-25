@@ -29,8 +29,8 @@ public class UserController {
         return new ResponseEntity<List<User>>(repository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/authenticate")
-    public ResponseEntity<User> authenticate(@RequestBody User user) {
+    @PostMapping(path = "/login")
+    public ResponseEntity<User> login(@RequestBody User user) {
         return new ResponseEntity<User>(repository.find(user.getMail(), user.getPass()), HttpStatus.OK);
     }
 
